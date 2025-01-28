@@ -13,10 +13,19 @@ repositories {
     mavenCentral()
 }
 
+
+val ajaltVersion = "2.8.0"
+val slf4jVersion = "2.0.16"
+val seleniumVersion = "4.11.0"
+val junitVersion = "5.7.0"
+
 dependencies {
-    implementation("com.github.ajalt:clikt:2.8.0")
-    implementation("org.slf4j:slf4j-api:2.0.16")
-    implementation("org.seleniumhq.selenium:selenium-java:4.11.0")
+    implementation("com.github.ajalt:clikt:$ajaltVersion")
+    implementation("org.slf4j:slf4j-api:$slf4jVersion")
+    implementation("org.seleniumhq.selenium:selenium-java:$seleniumVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
 }
 
 tasks.test {
