@@ -39,7 +39,7 @@ tasks.register<Jar>("fatJar") {
 
     manifest {
         // Указываем точку входа на файл, который генерирует команду
-        attributes["Main-Class"] = "org.example.CheckUrlsSeleniumCommandKt"
+        attributes["Main-Class"] = "org.example.helpers.core.CheckUrlsCommandKt"
     }
 
     from(sourceSets.main.get().output)

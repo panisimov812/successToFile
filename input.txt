@@ -8,7 +8,6 @@ http://www.sberbank.ru
 http://www.vk.com
 http://www.ok.ru
 http://www.rbc.ru
-http://www.rambler.ru
 http://www.tinkoff.ru
 http://www.avito.ru
 http://www.kinopoisk.ru

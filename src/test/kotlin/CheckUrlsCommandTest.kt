@@ -1,18 +1,21 @@
-import org.example.checkUrlsWithSelenium
+import org.example.helpers.core.CheckUrlsCore
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.File
 
-class CheckUrlsSeleniumCommandTest {
+class CheckUrlsCommandTest {
+    private val core = CheckUrlsCore()
 
     @Test
     fun testFileIsFilledWithUrls() {
+
+
         val inputFile = File.createTempFile("input", ".txt")
         val outputFile = File.createTempFile("output", ".txt")
 
         inputFile.writeText("https://www.google.com\nhttps://www.example.com\nhttps://nonexistentwebsite.com")
 
-        checkUrlsWithSelenium(inputFile.absolutePath, outputFile.absolutePath)
+        core.checkUrlsWithSelenium(inputFile.absolutePath, outputFile.absolutePath)
 
         assertTrue(outputFile.exists())
         assertTrue(outputFile.readText().contains("https://www.google.com"))
@@ -30,7 +33,7 @@ class CheckUrlsSeleniumCommandTest {
 
         inputFile.writeText("https://www.google.com\nhttps://www.ya.ru\nhttps://yhsdfsdf.ru\nhttps://nonexistentwebsite.com/")
 
-        checkUrlsWithSelenium(inputFile.absolutePath, outputFile.absolutePath)
+        core.checkUrlsWithSelenium(inputFile.absolutePath, outputFile.absolutePath)
 
         assertTrue(outputFile.readText().contains("https://www.google.com"))
         assertTrue(outputFile.readText().contains("https://www.ya.ru"))
